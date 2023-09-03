@@ -1,0 +1,79 @@
+<!-- ProgressBarComponent.razor -->
+@page "/progressbar"
+
+@foreach (var progressBar in progressBars)
+{
+    <div class="progress-container">
+        <div class="progress-label">Progress: @progressBar.CurrentValue/@progressBar.MaxValue</div>
+        <div class="progress">
+            <div class="progress-bar" style="width: @(progressBar.CurrentValue * 100 / progressBar.MaxValue)%;"></div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<ProgressBar> progressBars = new List<ProgressBar>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Create a list to store all the asynchronous tasks
+        var tasks = new List<Task>();
+
+        // Initialize progress bars with different maximum values
+        for (int i = 0; i < 6; i++)
+        {
+            var progressBar = new ProgressBar { CurrentValue = 0, MaxValue = new Random().Next(50, 101) };
+            progressBars.Add(progressBar);
+
+            // Create an IProgress<int> to report progress
+            var progressReporter = new Progress<int>(value =>
+            {
+                progressBar.CurrentValue = value;
+                StateHasChanged(); // Notify Blazor to re-render
+            });
+
+            // Start an asynchronous process without waiting for it to complete
+            tasks.Add(SimulateAsyncProcess(progressReporter, progressBar.MaxValue, progressBar));
+        }
+
+        // Wait for all tasks to complete
+        await Task.WhenAll(tasks);
+    }
+
+    private async Task SimulateAsyncProcess(IProgress<int> progress, int maxValue, ProgressBar progressBar)
+    {
+        while (progressBar.CurrentValue <= 100)
+        {
+            // Increment the progress value by a random amount
+            int increment = new Random().Next(1, 6);
+            progress.Report(Math.Min(progressBar.CurrentValue + increment, maxValue));
+            await Task.Delay(100); // Simulate some work
+        }
+    }
+
+    private class ProgressBar
+    {
+        public int CurrentValue { get; set; }
+        public int MaxValue { get; set; }
+    }
+}
+
+<style>
+    .progress-container {
+        margin-bottom: 20px;
+    }
+
+    .progress-label {
+        font-weight: bold;
+    }
+
+    .progress {
+        height: 20px;
+        background-color: #ddd;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background-color: #007bff;
+    }
+</style>
