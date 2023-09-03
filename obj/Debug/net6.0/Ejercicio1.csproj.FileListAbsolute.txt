@@ -1,0 +1,15 @@
+/home/sami/ProgramacionVI/Ejercicio1/bin/Debug/net6.0/Ejercicio1
+/home/sami/ProgramacionVI/Ejercicio1/bin/Debug/net6.0/Ejercicio1.deps.json
+/home/sami/ProgramacionVI/Ejercicio1/bin/Debug/net6.0/Ejercicio1.runtimeconfig.json
+/home/sami/ProgramacionVI/Ejercicio1/bin/Debug/net6.0/Ejercicio1.dll
+/home/sami/ProgramacionVI/Ejercicio1/bin/Debug/net6.0/ref/Ejercicio1.dll
+/home/sami/ProgramacionVI/Ejercicio1/bin/Debug/net6.0/Ejercicio1.pdb
+/home/sami/ProgramacionVI/Ejercicio1/obj/Debug/net6.0/Ejercicio1.csproj.AssemblyReference.cache
+/home/sami/ProgramacionVI/Ejercicio1/obj/Debug/net6.0/Ejercicio1.GeneratedMSBuildEditorConfig.editorconfig
+/home/sami/ProgramacionVI/Ejercicio1/obj/Debug/net6.0/Ejercicio1.AssemblyInfoInputs.cache
+/home/sami/ProgramacionVI/Ejercicio1/obj/Debug/net6.0/Ejercicio1.AssemblyInfo.cs
+/home/sami/ProgramacionVI/Ejercicio1/obj/Debug/net6.0/Ejercicio1.csproj.CoreCompileInputs.cache
+/home/sami/ProgramacionVI/Ejercicio1/obj/Debug/net6.0/Ejercicio1.dll
+/home/sami/ProgramacionVI/Ejercicio1/obj/Debug/net6.0/ref/Ejercicio1.dll
+/home/sami/ProgramacionVI/Ejercicio1/obj/Debug/net6.0/Ejercicio1.pdb
+/home/sami/ProgramacionVI/Ejercicio1/obj/Debug/net6.0/Ejercicio1.genruntimeconfig.cache
